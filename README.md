@@ -7,26 +7,6 @@
 [![pre-commit][pre-commit-shield]][pre-commit]
 [![Black][black-shield]][black]
 
-[![hacs][hacsbadge]][hacs]
-[![Project Maintenance][maintenance-shield]][user_profile]
-[![BuyMeCoffee][buymecoffeebadge]][buymecoffee]
-
-[![Discord][discord-shield]][discord]
-[![Community Forum][forum-shield]][forum]
-
-**TO BE REMOVED: If you need help, as a developer, to use this custom component tempalte,
-please look at the [User Guide in the Cookiecutter documentation](https://cookiecutter-homeassistant-custom-component.readthedocs.io/en/stable/quickstart.html)**
-
-**This component will set up the following platforms.**
-
-| Platform        | Description                         |
-| --------------- | ----------------------------------- |
-| `binary_sensor` | Show something `True` or `False`.   |
-| `sensor`        | Show info from Kidde HomeSafe API.  |
-| `switch`        | Switch something `True` or `False`. |
-
-![example][exampleimg]
-
 ## Installation
 
 1. Using the tool of choice open the directory (folder) for your HA configuration (where you find `configuration.yaml`).
@@ -36,26 +16,6 @@ please look at the [User Guide in the Cookiecutter documentation](https://cookie
 5. Place the files you downloaded in the new directory (folder) you created.
 6. Restart Home Assistant
 7. In the HA UI go to "Configuration" -> "Integrations" click "+" and search for "Kidde HomeSafe"
-
-Using your HA configuration directory (folder) as a starting point you should now also have this:
-
-```text
-custom_components/kidde/translations/en.json
-custom_components/kidde/translations/fr.json
-custom_components/kidde/translations/nb.json
-custom_components/kidde/translations/sensor.en.json
-custom_components/kidde/translations/sensor.fr.json
-custom_components/kidde/translations/sensor.nb.json
-custom_components/kidde/translations/sensor.nb.json
-custom_components/kidde/__init__.py
-custom_components/kidde/api.py
-custom_components/kidde/binary_sensor.py
-custom_components/kidde/config_flow.py
-custom_components/kidde/const.py
-custom_components/kidde/manifest.json
-custom_components/kidde/sensor.py
-custom_components/kidde/switch.py
-```
 
 ## Configuration is done in the UI
 
