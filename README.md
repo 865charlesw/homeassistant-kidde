@@ -24,7 +24,7 @@ _Integration to integrate with [Kidde HomeSafe][kidde_homesafe]._
 
 If you want to contribute to this please read the [Contribution guidelines](CONTRIBUTING.md)
 
-***
+---
 
 [kidde_homesafe]: https://github.com/865charlesw/kidde-homesafe
 [commits-shield]: https://img.shields.io/github/commit-activity/y/865charlesw/kidde-homesafe.svg?style=for-the-badge

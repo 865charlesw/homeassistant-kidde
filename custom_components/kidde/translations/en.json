@@ -1,19 +1,19 @@
 {
-    "config": {
-        "step": {
-            "user": {
-                "data": {
-                    "email": "Email",
-                    "password": "Password"
-                }
-            }
-        },
-        "error": {
-            "invalid_auth": "Incorrect email or password.",
-            "unknown": "Unknown error."
-        },
-        "abort": {
-            "already_configured": "Already configured."
+  "config": {
+    "step": {
+      "user": {
+        "data": {
+          "email": "Email",
+          "password": "Password"
         }
+      }
+    },
+    "error": {
+      "invalid_auth": "Incorrect email or password.",
+      "unknown": "Unknown error."
+    },
+    "abort": {
+      "already_configured": "Already configured."
     }
+  }
 }
