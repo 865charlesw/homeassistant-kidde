@@ -18,7 +18,7 @@ STEP_USER_DATA_SCHEMA = vol.Schema(
     {
         vol.Required("email"): str,
         vol.Required("password"): str,
-        vol.Required("update_interval_seconds"): int,
+        vol.Required("update_interval_seconds", default=30): int,
     }
 )
 
@@ -35,18 +35,24 @@ class ConfigFlow(ConfigFlow, domain=DOMAIN):
         errors: dict[str, str] = {}
         if user_input is not None:
             try:
-                client = await KiddeClient.from_login(**user_input)
+                client = await KiddeClient.from_login(
+                    user_input["email"], user_input["password"]
+                )
             except KiddeClientAuthError:
                 errors["base"] = "invalid_auth"
             except Exception as e:  # pylint: disable=broad-except
                 _LOGGER.exception(f"{type(e).__name__}: {e}")
                 errors["base"] = "unknown"
-            update_interval = user_input["update_interval_seconds"]
-            if isinstance(update_interval, int) and update_interval >= 5:
-                title = f"Kidde ({user_input['email']})"
-                data = {"cookies": client.cookies, "update_interval": update_interval}
-                return self.async_create_entry(title=title, data=data)
-            errors["base"] = "invalid_update_interval"
+            else:
+                update_interval = user_input["update_interval_seconds"]
+                if isinstance(update_interval, int) and update_interval >= 5:
+                    title = f"Kidde ({user_input['email']})"
+                    data = {
+                        "cookies": client.cookies,
+                        "update_interval": update_interval,
+                    }
+                    return self.async_create_entry(title=title, data=data)
+                errors["base"] = "invalid_update_interval"
 
         return self.async_show_form(
             step_id="user", data_schema=STEP_USER_DATA_SCHEMA, errors=errors
