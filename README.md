@@ -1,4 +1,5 @@
 # Kidde HomeSafe Integration
+
 _Integration to integrate with [Kidde HomeSafe][kidde_homesafe]._
 
 ## HACS Installation
@@ -7,6 +8,8 @@ _Integration to integrate with [Kidde HomeSafe][kidde_homesafe]._
 1. Restart your HomeAssistant instance
 1. In the HA UI go to "Configuration" -> "Integrations" click "+" and search for "Kidde"
 1. Configuration is done in the UI
+
+You may get a notification from the Kidde app once you complete setup; either ignore or `ALLOW` it. Selecting `DENY`` may prevent this integration from updating.
 
 <!---->
 
