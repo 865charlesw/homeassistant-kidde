@@ -21,8 +21,10 @@ async def async_setup_entry(hass: HomeAssistant, entry: ConfigEntry) -> bool:
     """Set up Kidde HomeSafe from a config entry."""
 
     hass.data.setdefault(DOMAIN, {})
-    client = KiddeClient(**entry.data)
-    hass.data[DOMAIN][entry.entry_id] = coordinator = KiddeCoordinator(hass, client)
+    client = KiddeClient(entry.data["cookies"])
+    hass.data[DOMAIN][entry.entry_id] = coordinator = KiddeCoordinator(
+        hass, client, update_interval=entry.data["update_interval"]
+    )
     await coordinator.async_refresh()
     await hass.config_entries.async_forward_entry_setups(entry, PLATFORMS)
 
