@@ -1,0 +1,21 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "data": {
+          "email": "Email",
+          "password": "Password",
+          "update_interval_seconds": "Update Interval (seconds)"
+        }
+      }
+    },
+    "error": {
+      "invalid_auth": "Incorrect email or password.",
+      "unknown": "Unknown error.",
+      "invalid_update_interval": "Invalid update interval, must be >= 5 seconds."
+    },
+    "abort": {
+      "already_configured": "Already configured."
+    }
+  }
+}

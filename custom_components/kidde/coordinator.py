@@ -21,10 +21,15 @@ class KiddeCoordinator(DataUpdateCoordinator):
 
     data: KiddeDataset
 
-    def __init__(self, hass: HomeAssistant, client: KiddeClient) -> None:
+    def __init__(
+        self, hass: HomeAssistant, client: KiddeClient, update_interval: int
+    ) -> None:
         """Initialize coordinator."""
         super().__init__(
-            hass, _LOGGER, name=DOMAIN, update_interval=timedelta(seconds=30)
+            hass,
+            _LOGGER,
+            name=DOMAIN,
+            update_interval=timedelta(seconds=update_interval),
         )
         self.client = client
 
